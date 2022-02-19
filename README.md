@@ -4,6 +4,8 @@ The contents herein provide everything needed to deploy a Docker image on a Digi
 
 Whether it's installing a new package, testing a new strategy, switching workstations, or reproducing work in a book on algorithmic trading the success and ease of the effort often depends on programming environment being configured just right. This container and remote deployment was built to make it fast and easy to get up running testing strategies without the needed to be a DevOps expert.
 
+<br>
+
 ## Technologies
 
 This project leverages the following programs and platforms:  
@@ -39,6 +41,8 @@ _For modeling_
 
 This list is not exhaustive of the packages included in the image, and new packages will be added to `environment_conda.yml` periodically.
 
+<br>
+
 ## Set Up
 
 The Dockerized Jupyter Lab environment can be run locally or remotely. This section provides instructions for both options. The remote option uses a DigitalOcean Droplet. With minimal modifications to the shell scripts the set up of the environment can be automated on other cloud platforms like AWS, Azure, Google Cloud, etc.  
@@ -49,6 +53,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 __Remote__  
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
 
+<br>
+
 ## Usage
 
 __Local__  
@@ -57,9 +63,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 __Remote__  
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
+<br>
+
 ## Contributors
 Josh Mischung: [josh@knoasis.io](josh@knoasis.io), [LinkedIn](https://www.linkedin.com/in/joshmischung/)
 
+<br>
 
 ## License
 
