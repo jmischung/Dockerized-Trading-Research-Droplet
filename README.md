@@ -11,6 +11,7 @@ Whether it's installing a new package, testing a new strategy, switching worksta
 This project leverages the following programs and platforms:  
 
 * [Docker](https://docs.docker.com/)
+* [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
 * [Jupyter Lab](https://jupyter.org/)
 * [DigitalOcean](https://www.digitalocean.com/)  
 
