@@ -1,24 +1,65 @@
-# Project Title
+# Dockerized Trading Research Droplet
 
-Just after the title, introduce your project by describing attractively what the project is about and what is the main problem that inspires you to create this project or what is the main contribution for the potential user of your project.
+The contents herein provide everything needed to deploy a Docker image on a DigitalOcean droplet designed for backtesting trading strategies in Jupyter Lab.  
+
+Whether it's installing a new package, testing a new strategy, switching workstations, or reproducing work in a book on algorithmic trading the success and ease of the effort often depends on programming environment being configured just right. This container and remote deployment was built to make it fast and easy to get up running testing strategies without the needed to be a DevOps expert.
 
 ## Technologies
 
-Describe the technologies required to use your project such as programming languages, libraries, frameworks, and operating systems. Be sure to include the specific versions of any critical dependencies that you have used in the stable version of your project.
+This project leverages the following programs and platforms:  
 
-## Installation Guide
+* [Docker](https://docs.docker.com/)
+* [Jupyter Lab](https://jupyter.org/)
+* [DigitalOcean](https://www.digitalocean.com/)  
 
-In this section, you should include detailed installation notes containing code blocks and screenshots.
+The Docker image includes the basic suite of packages necessary to get started analyzing financial data and backtesting trading strategies:  
+
+_For importing data_  
+
+* [Alpaca](https://alpaca.markets/)
+* [Quandl](https://data.nasdaq.com/) (Now known as Nasdaq Data Link)  
+
+_For working with data_  
+
+* [Numpy](https://numpy.org/)
+* [Pandas](https://pandas.pydata.org/)  
+
+_For visualizing data_  
+
+* [Bokeh](https://bokeh.org/)
+* [Holoviews](https://holoviews.org/)
+* [Matplotlib](https://matplotlib.org/)
+* [Plotly](https://plotly.com/)
+* [Seaborn](https://seaborn.pydata.org/)  
+
+_For modeling_  
+
+* [Prophet](https://facebook.github.io/prophet/)
+* [Scikit-learn](https://scikit-learn.org/stable/)  
+
+This list is not exhaustive of the packages included in the image, and new packages will be added to `environment_conda.yml` periodically.
+
+## Set Up
+
+The Dockerized Jupyter Lab environment can be run locally or remotely. This section provides instructions for both options. The remote option uses a DigitalOcean Droplet. With minimal modifications to the shell scripts the set up of the environment can be automated on other cloud platforms like AWS, Azure, Google Cloud, etc.  
+
+__Local__  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
+
+__Remote__  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
 
 ## Usage
 
-This section should include screenshots, code blocks, or animations explaining how to use your project.
+__Local__  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
+
+__Remote__  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 ## Contributors
+Josh Mischung: [josh@knoasis.io](josh@knoasis.io), [LinkedIn](https://www.linkedin.com/in/joshmischung/)
 
-In this section, list all the people who contribute to this project. You might want recruiters or potential collaborators to reach you, so include your contact email and, optionally, your LinkedIn or Twitter profile.  
-
-- Josh Mischung: [josh@knoasis.io](josh@knoasis.io), [LinkedIn](https://www.linkedin.com/in/joshmischung/)
 
 ## License
 
