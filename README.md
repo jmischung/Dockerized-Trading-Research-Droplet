@@ -2,7 +2,7 @@
 
 The contents herein provide everything needed to deploy a Docker image on a DigitalOcean droplet designed for backtesting trading strategies in Jupyter Lab.  
 
-Whether it's installing a new package, testing a new strategy, switching workstations, or reproducing work in a book on algorithmic trading the success and ease of the effort often depends on programming environment being configured just right. This container and remote deployment was built to make it fast and easy to get up running testing strategies without the needed to be a DevOps expert.
+Whether it's installing a new package, testing a new strategy, switching workstations, or reproducing work in a book on algorithmic trading the success and ease of the effort often depend on the programming environment being configured just right. This container and remote deployment was built to make it fast and easy to get up running testing trading strategies without the need to be a DevOps expert.
 
 <br>
 
