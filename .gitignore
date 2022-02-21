@@ -5,16 +5,15 @@
 # gitignore template for Jupyter Notebooks
 # website: http://jupyter.org/
 
-# Sensitive jupyter configuration files
-jupyter_notebook_config.py
-jupyter_notebook_config.json
-
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
 # IPython
 profile_default/
 ipython_config.py
+
+# PyCharm
+.idea
 
 # Remove previous ipynb_checkpoints
 #   git rm -r .ipynb_checkpoints/
