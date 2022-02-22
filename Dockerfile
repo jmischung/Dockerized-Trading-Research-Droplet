@@ -23,8 +23,6 @@ RUN apt-get autoclean && apt-get update && \
     vim \
     wget
 
-# expect \
-
 # Install miniconda, packages,
 # and add conda to path.
 ENV CONDA_DIR /opt/conda
@@ -54,11 +52,11 @@ COPY jup_lab_settings /home/ds/.jupyter
 # Set non-root user as the owner of their .jupyter directory
 # and the jupyter config scripts.
 USER root
-COPY config_scripts /home/ds/config_scripts
+COPY config_files /home/ds/config_files
 RUN chown -R ds /home/ds/.jupyter && \
-    chown -R ds /home/ds/config_scripts
+    chown -R ds /home/ds/config_files
 USER ds
-WORKDIR /home/ds/config_scripts
+WORKDIR /home/ds/config_files
 
 # Create jupyter password and set it
 # in the jupyter config file.
@@ -71,7 +69,7 @@ RUN expect set_jup_passwd.sh && \
     conda init && \
     bash -c "source /home/ds/.bashrc"
 WORKDIR /home/ds/notebooks
-RUN rm -rf /home/ds/config_scripts
+RUN rm -rf /home/ds/config_files
 
 # Configure container startup.
 EXPOSE 8888
