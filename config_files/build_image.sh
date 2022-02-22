@@ -12,8 +12,7 @@ read -sp 'Password: ' jup_passwd1
 read -sp $'\x0aVerify password: ' jup_passwd2
 
 # Check that inputs match.
-if [ "$jup_passwd1" = "$jup_passwd2" ]
-then
+if [ "$jup_passwd1" = "$jup_passwd2" ]; then
   # Build the Docker image
   echo "Building the Jupyter Lab Docker Image"
   docker build -t trading_lab --build-arg JUP_PASSWD='$jup_passwd1' .

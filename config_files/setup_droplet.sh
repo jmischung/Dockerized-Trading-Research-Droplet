@@ -24,23 +24,19 @@ mv Dockerized-Trading-Research-Droplet/config_files/jup_trading_lab /etc/nginx/s
 # access the server.
 echo -e "${BLUE}To configure Nginx we'll need to know how you plan to access your remote trading lab."
 read -p $'\x0aDo you want to access your remote trading lab using the ip address? [Y/n] ' ip_response
-if [ "${ip_respone^^}" = "Y" ]
-then
+if [ "${ip_respone^^}" = "Y" ]; then
   read -p $'\x0aWhat is the ip address? ' ip_address
 fi
 
 read -p $'\x0aDo you have a domain name that you would like to use to access your remote trading lab? [Y/n]' domain_response
-if [ "${domain_response^^}" = "Y" ]
-then
+if [ "${domain_response^^}" = "Y" ]; then
   read -p $'\x0aWhat is the domain?' domain_name
 fi
 
-if [ "${ip_respone^^}" = "Y" ] && [ "${domain_response^^}" = "Y" ]
-then
+if [ "${ip_respone^^}" = "Y" ] && [ "${domain_response^^}" = "Y" ]; then
   echo -e "${NC}"
   sed -i "13s~.*~        server_name $ip_address $domain_name;~" /etc/nginx/sites-available/jup_trading_lab
-elif [ "${ip_respone^^}" = "Y" ]
-then
+elif [ "${ip_respone^^}" = "Y" ]; then
   echo -e "${NC}"
   sed -i "13s~.*~        server_name $ip_address;~" /etc/nginx/sites-available/jup_trading_lab
 else
