@@ -24,7 +24,7 @@ mv Dockerized-Trading-Research-Droplet/config_files/jup_trading_lab /etc/nginx/s
 # access the server.
 echo -e "${BLUE}To configure Nginx we'll need to know how you plan to access your remote trading lab."
 read -p $'\x0aDo you want to access your remote trading lab using the ip address? [Y/n] ' ip_response
-if [ "${ip_respone^^}" = "Y" ]; then
+if [ "${ip_response^^}" = "Y" ]; then
   read -p $'\x0aWhat is the ip address? ' ip_address
 fi
 
