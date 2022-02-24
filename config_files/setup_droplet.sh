@@ -11,6 +11,10 @@ apt-get autoclean && apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
 apt-get install -qq nginx
 
+# Disable root login.
+sed -i "34s~.*~PermitRootLogin no~" /etc/ssh/sshd_config
+systemctl reload sshd
+
 # Simple firewall setup using ufw.
 ufw allow OpenSSH
 ufw allow 'Nginx Full'
