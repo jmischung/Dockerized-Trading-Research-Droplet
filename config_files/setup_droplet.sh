@@ -21,7 +21,7 @@ ufw allow 'Nginx Full'
 echo "y" | ufw enable
 
 # Configure Nginx.
-mv Dockerized-Trading-Research-Droplet/config_files/jup_trading_lab /etc/nginx/sites-available/jup_trading_lab
+mv ./config_files/jup_trading_lab /etc/nginx/sites-available/jup_trading_lab
 
 # Collect the values associated with
 # the method that will be used to
@@ -52,7 +52,7 @@ ln -s /etc/nginx/sites-available/jup_trading_lab /etc/nginx/sites-enabled
 systemctl restart nginx
 
 # Build the Jupyter Lab Docker Image
-bash ./build_image.sh
+bash ./config_files/build_image.sh
 
 # End set up script
 echo -e "${BLUE}Your droplet has successfully been set up.${NC}"

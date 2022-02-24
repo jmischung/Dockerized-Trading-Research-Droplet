@@ -74,4 +74,3 @@ RUN rm -rf /home/ds/config_files
 # Configure container startup.
 EXPOSE 8888
 CMD ["sh", "-c", "jupyter lab --ip 0.0.0.0 --port 8888"]
-
