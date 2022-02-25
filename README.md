@@ -46,23 +46,106 @@ This list is not exhaustive of the packages included in the image, and new packa
 
 ## Set Up
 
-The Dockerized Jupyter Lab environment can be run locally or remotely. This section provides instructions for both options. The remote option uses a DigitalOcean Droplet. With minimal modifications to the shell scripts the set up of the environment can be automated on other cloud platforms like AWS, Azure, Google Cloud, etc.  
+The major commands required to run the set up scripts and deploy the remote Jupyter trading lab are included in this section. Basic knowledge of ssh keys is required to follow along with the set up. DigitalOcean provides helpful instructions for adding ssh keys to their accounts, referenced [here](https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/).  
 
-__Local__  
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
+A more verbose step-by-step with screenshots for reference is in the works and will be published in [Towards Data Science](https://towardsdatascience.com/) in the near future. Once the article is published a reference to the article will be included on this page to help those that would benefit from more granular steps.
 
-__Remote__  
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
+The set up is specific to DigitalOcean, but the scripts will run on any Linux server, so AWS, Azure, and Google Cloud can all be used with only minor deviations from the instructions below.
+
+### Build the Droplet
+
+Those without an existing DigitalOcean account can sign up [here](https://www.digitalocean.com/). Once an account has been created and an ssh public key has been added to the account, create a Droplet that is running Linux and has Docker pre-installed. Building the Docker image requires at least 4GB of memory.  
+
+<img src="images/linux_droplet_with_docker.png" alt="Droplet Creation Menu" width="500"/>
+
+### Create a Non-Root User
+
+Commands run locally are prefixed with `$`, those run on the Droplet are prefixed with `#`. This convention is consistent through the set up.
+
+__SSH into the Droplet__   
+
+`$ ssh root@xxx.xx.xx.xxx`  
+
+__Create the User__
+    
+```
+# adduser <username>
+# usermod -aG sudo <username>
+# cd /home/<username>
+```
+
+__Add an Authorized Key__  
+One the local machine create a new ssh key and paste the public key into the `authorized_keys` file.  
+    
+```
+# mkdir .ssh
+# vim .ssh/authorized_keys
+```  
+
+<br>
+
+### Configure the Droplet and Build the Image  
+
+This step takes several minutes and produces a great deal of content in the terminal. Prompts that require your input are in blue.  
+
+```
+# git clone https://github.com/jmischung/Dockerized-Trading-Research-Droplet.git
+# cd Dockerized-Trading-Research-Droplet/
+# bash config_files/setup_droplet.sh
+```  
+
+During the build some red text will be output to the terminal and the program will stay there for several moments. This is expected and nothing to be concerned about.  
+
+<img src="images/jupLabExtension_warning_output.png" alt="Jupyter Lab Extension Warning" width="350"/>  
+
+Once the build is complete, exit the root session.
+
+<br>
+
+### Start the Container
+
+From the local machine ssh back into the Droplet as the non-root user that was set up earlier.  
+
+`# ssh <username>@xxx.xx.xx.xxx`
+
+ Create the directory where the notebooks will be stored and cd into this directory.  
+    
+```
+# mkdir notebooks
+# cd notebooks
+```  
+
+Start a Docker Container using the Docker Image that was built using the command below. You will be prompted to enter the non-root user's password as Docker requires root privileges.  
+    
+```
+# sudo docker run -d \
+ -p 8888:8888 \
+ -v $(pwd):/home/ds/notebooks \
+ --name jup_trading_lab \
+ trading_lab
+```  
+
+Congratulations! You've successfully set up a remote Jupyter Lab will a great foundation of packages to begin analyzing financial data and testing trading strategies.
+
+<br>
+
+### Optional - Enable HTTPS
+  
+If you're using a domain name, HTTPS can quickly be enabled using certbot. This [link](https://certbot.eff.org/instructions?ws=nginx&os=ubuntufocal) takes you to the instructions specific to enabling HTTPS access on the configuration of this setup (Nginx on Ubuntu 20).  
 
 <br>
 
 ## Usage
 
-__Local__  
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
+Enter your IP address or domain into your browser. You'll see the prompt from Jupyter to enter the password you set up earlier. Enter the password and you'll be taken to the Jupyter Lab home screen.
 
-__Remote__  
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+<img src="images/jup_lab_homescreen.png" alt="Jupyter Lab Home Screen" width="500"/>  
+
+When only using the IP address to access the Jupyter Trading Lab a deceptive site warning might be generated because the site is unfamiliar to the browser, asking for a password, and is not using HTTPS. Since we know the owners of the site we don't need to be concerned. Click the details button, then the "visit this unsafe site" link and you'll be taken to the standard Jupyter password prompt.
+
+<img src="images/deceptive_site_warning.png" alt="Deceptive Site Warning" width="350"/>
+
+Trade well.
 
 <br>
 
