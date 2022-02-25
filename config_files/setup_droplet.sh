@@ -32,7 +32,7 @@ if [ "${ip_response^^}" = "Y" ]; then
   read -p $'\x0aWhat is the ip address? ' ip_address
 fi
 
-read -p $'\x0aDo you have a domain name that you would like to use to access your remote trading lab? [Y/n]' domain_response
+read -p $'\x0aDo you have a domain name that you would like to use to access your remote trading lab? [Y/n] ' domain_response
 if [ "${domain_response^^}" = "Y" ]; then
   read -p $'\x0aWhat is the domain? ' domain_name
 fi

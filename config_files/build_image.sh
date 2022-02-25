@@ -15,8 +15,9 @@ read -sp $'\x0aVerify password: ' jup_passwd2
 if [ "$jup_passwd1" = "$jup_passwd2" ]; then
   # Build the Docker image
   echo $'\x0aBuilding the Jupyter Lab Docker Image'
-  docker build -t trading_lab --build-arg JUP_PASSWD='$jup_passwd1' .
-  echo -e "The Jupyter Lab Docker Image was built successfully${NC}"
+  echo -e "${NC}"
+  docker build -t trading_lab --build-arg JUP_PASSWD="${jup_passwd1}" .
+  echo -e "${BLUE}The Jupyter Lab Docker Image was built successfully${NC}"
 else
   # Ask for the password to be reentered until the entries match.
   while [ "$jup_passwd1" != "$jup_passwd2" ]
@@ -27,6 +28,7 @@ else
   done
   # Build the Docker image
   echo $'\x0aBuilding the Jupyter Lab Docker Image'
-  docker build -t trading_lab --build-arg JUP_PASSWD='$jup_passwd1' .
-  echo -e "The Jupyter Lab Docker Image was built successfully${NC}"
+  echo -e "${NC}"
+  docker build -t trading_lab --build-arg JUP_PASSWD="${jup_passwd1}" .
+  echo -e "${BLUE}The Jupyter Lab Docker Image was built successfully${NC}"
 fi
