@@ -149,8 +149,15 @@ Trade well.
 
 <br>
 
-## Contributors
+## Author
+
 Josh Mischung: [josh@knoasis.io](josh@knoasis.io), [LinkedIn](https://www.linkedin.com/in/joshmischung/)
+
+<br>
+
+## Contributing
+
+I would be delighted to collaborate in an effort to improve this trading lab. If you have ideas about how to improve this image reach out to me on [LinkedIn](https://www.linkedin.com/in/joshmischung/) or email me at [josh@knoasis.io](josh@knoasis.io).
 
 <br>
 
