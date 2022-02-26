@@ -86,7 +86,7 @@ One the local machine create a new ssh key and paste the public key into the `au
 
 ### Configure the Droplet and Build the Image  
 
-This step takes several minutes and produces a great deal of content in the terminal. Prompts that require your input are in blue.  
+The total configuration and build time takes approximately 12 minutes and produces a great deal of content in the terminal. Prompts that require your input are in blue.  
 
 ```
 # git clone https://github.com/jmischung/Dockerized-Trading-Research-Droplet.git
