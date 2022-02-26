@@ -94,6 +94,8 @@ This step takes several minutes and produces a great deal of content in the term
 # bash config_files/setup_droplet.sh
 ```  
 
+__IMPORTANT:__ When prompted to create the Jupyter password DO NOT use `\` in the password. Other symbols can be used.
+
 During the build some red text will be output to the terminal and the program will stay there for several moments. This is expected and nothing to be concerned about.  
 
 <img src="images/jupLabExtension_warning_output.png" alt="Jupyter Lab Extension Warning" width="350"/>  
