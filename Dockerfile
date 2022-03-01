@@ -33,13 +33,14 @@ COPY environment_conda.yml /tmp
 RUN conda update -y conda && \
     conda env update --file /tmp/environment_conda.yml && \
     jupyter labextension update --all && \
+    jupyter labextension install jupyterlab-theme-solarized-dark && \
     jupyter lab build -y && \
     jupyter lab clean -y
 
 # Install the `expect` package and cleanup
 # files and directories from the build.
 RUN export DEBIAN_FRONTEND=noninteractive && \
-    apt-get -yq install expect && \
+    apt-get -yq install expect graphviz && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
