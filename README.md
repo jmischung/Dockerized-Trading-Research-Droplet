@@ -75,7 +75,7 @@ __Create the User__
 ```
 
 __Add an Authorized Key__  
-One the local machine create a new ssh key and paste the public key into the `authorized_keys` file.  
+Once the local machine create a new ssh key and paste the public key into the `authorized_keys` file.  
     
 ```
 # mkdir .ssh
