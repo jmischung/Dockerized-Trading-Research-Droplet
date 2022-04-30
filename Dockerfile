@@ -17,6 +17,7 @@ RUN apt-get autoclean && apt-get update && \
     bzip2 \
     gcc \
     git \
+    iputils-ping \
     jq \
     htop \
     screen \
@@ -73,5 +74,5 @@ WORKDIR /home/ds/notebooks
 RUN rm -rf /home/ds/config_files
 
 # Configure container startup.
-EXPOSE 8888
+EXPOSE 7545 8501 8888
 CMD ["sh", "-c", "jupyter lab --ip 0.0.0.0 --port 8888"]

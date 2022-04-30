@@ -2,8 +2,8 @@ name: base
 channels:
   - plotly
   - pyviz
-  - anaconda
   - conda-forge
+  - anaconda
   - defaults
 dependencies:
   - _libgcc_mutex=0.1=main
@@ -70,6 +70,7 @@ dependencies:
   - defusedxml=0.7.1=pyhd3eb1b0_0
   - entrypoints=0.3=py39h06a4308_0
   - ephem=4.0.0.2=py39h3811e60_0
+  - et_xmlfile=1.1.0=py39h06a4308_0
   - expat=2.2.10=he6710b0_2
   - faker=12.0.0=pyhd8ed1ab_0
   - flask=2.0.3=pyhd8ed1ab_0
@@ -191,6 +192,7 @@ dependencies:
   - numpy=1.21.2=py39h20f2e39_0
   - numpy-base=1.21.2=py39h79a1101_0
   - olefile=0.46=pyhd3eb1b0_0
+  - openpyxl=3.0.9=pyhd3eb1b0_0
   - openssl=1.1.1k=h7f98852_0
   - orc=1.6.7=h89a63ab_2
   - packaging=20.4=py_0
@@ -373,4 +375,3 @@ dependencies:
     - yarl==1.7.2
     - yfinance==0.1.70
 prefix: /opt/conda
-
