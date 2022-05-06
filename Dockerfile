@@ -12,6 +12,7 @@ LABEL maintainer="Josh Mischung josh.mischung@gmail.com"
 RUN apt-get autoclean && apt-get update && \
     apt-get upgrade -y && apt-get upgrade -y bash && \
     apt-get install -qq \
+    acl \
     apt-utils \
     build-essential \
     bzip2 \
@@ -56,7 +57,8 @@ COPY jup_lab_settings /home/ds/.jupyter
 USER root
 COPY config_files /home/ds/config_files
 RUN chown -R ds /home/ds/.jupyter && \
-    chown -R ds /home/ds/config_files
+    chown -R ds /home/ds/config_files && \
+    setfacl -R -m u:ds:rwx /opt/conda
 USER ds
 WORKDIR /home/ds/config_files
 
