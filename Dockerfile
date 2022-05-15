@@ -16,14 +16,23 @@ RUN apt-get autoclean && apt-get update && \
     apt-utils \
     build-essential \
     bzip2 \
+    curl \
     gcc \
     git \
+    htop \
     iputils-ping \
     jq \
-    htop \
+    lsof \
     screen \
+    unzip \
     vim \
     wget
+
+# Install AWS CLI
+RUN curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o awscliv2.zip && \
+    unzip awscliv2.zip && \
+    ./aws/install && \
+    rm -rf aws awscliv2.zip
 
 # Install miniconda, packages,
 # and add conda to path.
